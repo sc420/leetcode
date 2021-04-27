@@ -1,12 +1,12 @@
-#define DIV 10000
+static const int BUCKET_SIZE = 1000;
 
 class Solution {
  public:
   std::vector<int> twoSum(std::vector<int>& nums, int target) {
-    char bits[(250000000 + 1) / DIV + 1] = {0};
+    char bits[(250000000 + 1) / BUCKET_SIZE + 1] = {0};
     for (size_t i = 0; i < nums.size(); i++) {
       const int num = nums[i];
-      const int nonnegNum = (num + 1000000000) / DIV;
+      const int nonnegNum = (num + 1000000000) / BUCKET_SIZE;
       // Check if the number exists
       const int bucketIndex = nonnegNum / 8;
       const int offset = nonnegNum % 8;
@@ -27,7 +27,7 @@ class Solution {
       // Check if the other number is possible
       if (other < (-1000000000) || other > 1000000000) continue;
 
-      const int nonnegOther = (other + 1000000000) / DIV;
+      const int nonnegOther = (other + 1000000000) / BUCKET_SIZE;
       const int otherBucketIndex = nonnegOther / 8;
       const int otherOffset = nonnegOther % 8;
       bits[otherBucketIndex] |= (1 << otherOffset);
