@@ -5,7 +5,7 @@
 #include <stdexcept>
 #include <vector>
 
-#include "solution.h"
+#include "solution.hint1.h"
 
 static const int MAX_NUM = 1000000000;
 static const int MAX_SIZE = 1000;

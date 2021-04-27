@@ -2,7 +2,7 @@
 
 # tool macros
 CC := clang++ # FILL: the compiler
-CCFLAGS := -std=c++17 # FILL: compile flags
+CCFLAGS := -std=c++17 -I include/ # FILL: compile flags
 DBGFLAGS := -g
 CCOBJFLAGS := $(CCFLAGS) -c
 
