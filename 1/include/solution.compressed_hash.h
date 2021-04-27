@@ -2,7 +2,7 @@
 
 class Solution {
  public:
-  std::vector<int> twoSum(std::vector<int>& nums, int target) {
+  std::vector<int> twoSum(std::vector<int> &nums, int target) {
     std::unordered_map<short, short> numToIndex;
     for (size_t i = 0; i < nums.size(); i++) {
       const int num = nums[i];

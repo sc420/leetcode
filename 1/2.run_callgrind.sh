@@ -1,8 +1,10 @@
 #!/bin/bash
 
+# --main-stacksize: ~5MB
 valgrind \
     --tool=callgrind \
     \
+    --main-stacksize=500000000 \
     --callgrind-out-file=callgrind.out \
     --log-file=callgrind.log \
     \

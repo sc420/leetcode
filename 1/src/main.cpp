@@ -5,7 +5,7 @@
 #include <stdexcept>
 #include <vector>
 
-#include "solution.hint1.h"
+#include "solution.custom_hash.h"
 
 static const int MAX_NUM = 1000000000;
 static const int MAX_SIZE = 1000;

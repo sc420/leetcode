@@ -1,8 +1,8 @@
-static const int BUCKET_SIZE = 1000;
+static const int BUCKET_SIZE = 10;
 
 class Solution {
  public:
-  std::vector<int> twoSum(std::vector<int>& nums, int target) {
+  std::vector<int> twoSum(std::vector<int> &nums, int target) {
     char bits[(250000000 + 1) / BUCKET_SIZE + 1] = {0};
     for (size_t i = 0; i < nums.size(); i++) {
       const int num = nums[i];
