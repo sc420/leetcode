@@ -123,4 +123,6 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/c++,vscode,windows,linux,macos
 
 ### Project ###
+*.log
 bin/
+debug/
