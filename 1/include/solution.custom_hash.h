@@ -1,4 +1,4 @@
-static const int BUCKET_SIZE = 10;
+static const int BUCKET_SIZE = 1000;
 
 class Solution {
  public:
