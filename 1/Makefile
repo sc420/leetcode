@@ -1,3 +1,5 @@
+# Reference: https://github.com/TheNetAdmin/Makefile-Templates
+
 # tool macros
 CC := clang++ # FILL: the compiler
 CCFLAGS := -std=c++17 # FILL: compile flags
