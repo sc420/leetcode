@@ -11,12 +11,8 @@
 class Solution {
  public:
   ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
-    ListNode *nodes[10];
-    for (int i = 0; i < 10; i++) {
-      nodes[i] = new ListNode(i);
-    }
-    ListNode *head = nullptr;
-    ListNode *prevNode = nullptr;
+    ListNode *curNode = new ListNode();
+    ListNode *head = curNode;
     int carry = 0;
     while (true) {
       const int sum = (l1 ? l1->val : 0) + (l2 ? l2->val : 0) + carry;
