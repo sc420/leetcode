@@ -47,6 +47,6 @@ class Solution {
       }
     }
 
-    return (int)maxPlaylistLength;
+    return maxPlaylistLength;
   }
 };
