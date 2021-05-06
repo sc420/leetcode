@@ -5,7 +5,7 @@
 #include <random>
 #include <vector>
 
-#include "solution.moving_lines.h"
+#include "solution.split_line.h"
 
 constexpr int MAX_ARRAY_SIZE = 1000;
 constexpr int MIN_VALUE = -1000000;
@@ -59,8 +59,9 @@ bool validateOutput(const double output, const Problem &problem) {
 
 int main(int argc, char *argv[]) {
   for (int testCaseIndex = 0; testCaseIndex < NUM_TEST_CASES; testCaseIndex++) {
-    const int m = randInt(0, MAX_ARRAY_SIZE);
-    const int n = randInt(0, MAX_ARRAY_SIZE);
+    const int arraySize = randInt(0, MAX_ARRAY_SIZE);
+    const int m = randInt(0, arraySize);
+    const int n = randInt(0, arraySize);
     if (m + n < 1) continue;
 
     Problem problem = generateProblem(m, n, MIN_VALUE, MAX_VALUE);
