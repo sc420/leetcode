@@ -42,7 +42,7 @@ class Solution {
 
  private:
   char getChar(const std::string &s, const int pos) {
-    if (pos < 0 || pos > (int)s.size()) return '\0';
+    if (pos < 0 || pos >= (int)s.size()) return '\0';
     return s.at(pos);
   }
 
