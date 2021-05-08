@@ -4,8 +4,8 @@ class Solution {
  public:
   std::string longestPalindrome(std::string s) {
     std::vector<int> compareList;
-    for (size_t index = 0; index < s.size(); index++) {
-      const char curChar = getChar(s, index);
+    for (int index = 0; index < (int)s.size(); index++) {
+      const char c = getChar(s, index);
       std::vector<int> newCompareList;
 
       // Check if the single character palindrome is longer
@@ -13,7 +13,7 @@ class Solution {
 
       // Check previous positions
       for (const int compareIndex : compareList) {
-        if (curChar == getChar(s, compareIndex)) {
+        if (c == getChar(s, compareIndex)) {
           checkLongerPalindrome(s, compareIndex, index);
           newCompareList.push_back(compareIndex - 1);
         }
@@ -22,7 +22,7 @@ class Solution {
       // Check i-1 position
       // For example: aa
       //               ^ index
-      if (curChar == getChar(s, index - 1)) {
+      if (c == getChar(s, index - 1)) {
         checkLongerPalindrome(s, index - 1, index);
         newCompareList.push_back(index - 2);
       }
@@ -30,7 +30,7 @@ class Solution {
       // Check i-2 position
       // For example: aba
       //                ^ index
-      if (curChar == getChar(s, index - 2)) {
+      if (c == getChar(s, index - 2)) {
         checkLongerPalindrome(s, index - 2, index);
         newCompareList.push_back(index - 3);
       }
