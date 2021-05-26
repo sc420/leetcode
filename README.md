@@ -1,6 +1,6 @@
 # LeetCode Solutions
 
-Not just code, I also put design spec as PowerPoint slides.
+Not just code, I also put design spec (in English) as PowerPoint slides.
 I try to be creative in solving these problems, so it won't be easy to find
 similar solutions on the internet.
 
