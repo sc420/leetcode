@@ -2,6 +2,7 @@
 #include <array>
 #include <cfloat>
 #include <climits>
+#include <initializer_list>
 #include <iostream>
 #include <numeric>
 #include <random>

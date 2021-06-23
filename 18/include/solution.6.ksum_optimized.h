@@ -15,7 +15,7 @@ class Solution {
       const int num = target / 4;
       const auto it = m_count.find(num);
       if (it != countEnd && it->second >= 4) {
-        output.emplace_back(std::vector<int>{num, num, num, num});
+        output.emplace_back(std::initializer_list<int>{num, num, num, num});
       }
     }
 
@@ -27,7 +27,8 @@ class Solution {
       if (num != other && otherSum % 3 == 0) {
         const auto it = m_count.find(other);
         if (it != countEnd && it->second >= 3) {
-          output.emplace_back(std::vector<int>{num, other, other, other});
+          output.emplace_back(
+              std::initializer_list<int>{num, other, other, other});
         }
       }
     }
@@ -42,7 +43,8 @@ class Solution {
       if (otherSum % 2 == 0 && num < other) {
         const auto it = m_count.find(other);
         if (it != countEnd && it->second >= 2) {
-          output.emplace_back(std::vector<int>{num, num, other, other});
+          output.emplace_back(
+              std::initializer_list<int>{num, num, other, other});
         }
       }
 
@@ -52,7 +54,8 @@ class Solution {
         if (num >= other1) continue;
         const int other2 = target - (2 * num) - other1;
         if (other1 < other2 && m_count.find(other2) != countEnd) {
-          output.emplace_back(std::vector<int>{num, num, other1, other2});
+          output.emplace_back(
+              std::initializer_list<int>{num, num, other1, other2});
         }
       }
 
@@ -62,7 +65,8 @@ class Solution {
         if (other1 >= num) continue;
         const int other2 = target - (2 * num) - other1;
         if (num < other2 && m_count.find(other2) != countEnd) {
-          output.emplace_back(std::vector<int>{other1, num, num, other2});
+          output.emplace_back(
+              std::initializer_list<int>{other1, num, num, other2});
         }
       }
 
@@ -72,7 +76,8 @@ class Solution {
         if (other2 >= num) continue;
         const int other1 = target - (2 * num) - other2;
         if (other1 < other2 && m_count.find(other1) != countEnd) {
-          output.emplace_back(std::vector<int>{other1, other2, num, num});
+          output.emplace_back(
+              std::initializer_list<int>{other1, other2, num, num});
         }
       }
     }
@@ -107,7 +112,7 @@ class Solution {
         return res;
 
       for (auto &set : kSum(nums, target - num, i + 1, k - 1)) {
-        res.push_back({num});
+        res.emplace_back(std::initializer_list<int>{num});
         res.back().insert(std::end(res.back()), std::begin(set), std::end(set));
       }
     }
@@ -128,7 +133,7 @@ class Solution {
       else if (sum > target)
         hiNum = nums[--hi];
       else {
-        res.emplace_back(std::vector<int>{loNum, hiNum});
+        res.emplace_back(std::initializer_list<int>{loNum, hiNum});
         loNum = nums[++lo];
         hiNum = nums[--hi];
       }
