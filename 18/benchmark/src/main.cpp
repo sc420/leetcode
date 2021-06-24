@@ -145,6 +145,11 @@ int benchmarkSolution(
 
 int main(int argc, char *argv[]) {
   std::cout << "Scale,kSum,kSum (Optimized),Lookup,Lookup (Two Pointers)\n";
+
+  // Higher scale version
+  // for (int scaleFactor = 0; scaleFactor <= 5; scaleFactor++) {
+  //   const double scale = std::pow(2.0, scaleFactor);
+
   for (int scaleFactor = 1; scaleFactor <= 10; scaleFactor++) {
     const double scale = 1 * scaleFactor;
     auto problems = generateProblems(scale);
