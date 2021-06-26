@@ -12,15 +12,22 @@ class Solution {
  public:
   ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
     int carry = 0;
-    while (true) {
-      const int sum = (l1 ? l1->val : 0) + (l2 ? l2->val : 0) + carry;
+    while (l1 || l2 || carry > 0) {
+      const int sum = getValue(l1) + getValue(l2) + carry;
+      l1 = next(l1);
+      l2 = next(l2);
       addOutputDigit(sum % 10);
       carry = sum / 10;
-      l1 = l1 ? l1->next : l1;
-      l2 = l2 ? l2->next : l2;
-      if (!l1 && !l2 && !carry) break;
     }
     return m_head;
+  }
+
+  int getValue(const ListNode *node) {
+    return node ? node->val : 0;
+  }
+
+  ListNode *next(ListNode *node) {
+    return node ? node->next : node;
   }
 
   void addOutputDigit(const int digit) {
